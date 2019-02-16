@@ -19,6 +19,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "phonenumber_field",
+    "ctrack.families",
 ]
 
 MIDDLEWARE = [
@@ -77,3 +79,4 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = "/static/"
+AUTH_USER_MODEL = "families.Person"
