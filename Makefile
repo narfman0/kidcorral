@@ -1,4 +1,10 @@
-default: run
+default: init run
+
+init:
+	pipenv install
+
+init-d:
+	pipenv install -d
 
 makemigrations:
 	pipenv run python manage.py makemigrations

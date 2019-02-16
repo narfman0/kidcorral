@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from ctrack.visit.models import Visit
+from kidcorral.visit.models import Visit
 
 
 class VisitAdmin(admin.ModelAdmin):

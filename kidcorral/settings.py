@@ -20,8 +20,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "phonenumber_field",
-    "ctrack.families",
-    "ctrack.visit",
+    "kidcorral.families",
+    "kidcorral.visit",
 ]
 
 MIDDLEWARE = [
@@ -34,7 +34,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "ctrack.urls"
+ROOT_URLCONF = "kidcorral.urls"
 
 TEMPLATES = [
     {
@@ -52,7 +52,7 @@ TEMPLATES = [
     }
 ]
 
-WSGI_APPLICATION = "ctrack.wsgi.application"
+WSGI_APPLICATION = "kidcorral.wsgi.application"
 
 
 DATABASES = {

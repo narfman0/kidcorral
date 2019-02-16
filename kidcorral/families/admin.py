@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from ctrack.families.models import Family, Person
+from kidcorral.families.models import Family, Person
 
 
 class FamilyAdmin(admin.ModelAdmin):
