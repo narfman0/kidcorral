@@ -9,7 +9,7 @@ Will allow for parent login via web and printing tags.
 TODO
 ----
 
-* Define sign in/sign out procedure and store
+* Create front end with REST api
 * Expose identification/information tags (print)
 * Send notifications
 
@@ -17,6 +17,7 @@ TODO
 * Update profile by person login credentials
 * Volunteer notifications
 * Analytics
+* Hash every id card with date to ensure no tampering has occurred
 
 License
 -------
