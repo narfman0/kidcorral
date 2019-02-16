@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from kidcorral.persons.models import Person
+from kidcorral.person.models import Person
 from kidcorral.visit.models import Visit
 
 

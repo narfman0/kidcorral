@@ -4,8 +4,8 @@ from rest_framework import routers
 from kidcorral.api import views
 
 router = routers.DefaultRouter()
-router.register(r"persons", views.PersonsViewSet)
-router.register(r"visits", views.VisitsViewSet)
+router.register(r"persons", views.PersonViewSet)
+router.register(r"visits", views.VisitViewSet)
 
 urlpatterns = [
     path("", include(router.urls)),

@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from kidcorral.persons.models import Person
+from kidcorral.person.models import Person
 
 
 class PersonAdmin(admin.ModelAdmin):

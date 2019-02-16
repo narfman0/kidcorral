@@ -21,8 +21,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "phonenumber_field",
     "rest_framework",
-    "kidcorral.families",
-    "kidcorral.persons",
+    "kidcorral.family",
+    "kidcorral.person",
     "kidcorral.visit",
 ]
 
@@ -82,4 +82,4 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = "/static/"
-AUTH_USER_MODEL = "persons.Person"
+AUTH_USER_MODEL = "person.Person"
