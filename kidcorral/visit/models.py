@@ -3,10 +3,10 @@ from django.db import models
 
 class Visit(models.Model):
     originator = models.ForeignKey(
-        "families.Person", on_delete=models.CASCADE, related_name="originator"
+        "persons.Person", on_delete=models.CASCADE, related_name="originator"
     )
     child = models.ForeignKey(
-        "families.Person", on_delete=models.CASCADE, related_name="target"
+        "persons.Person", on_delete=models.CASCADE, related_name="target"
     )
     sign_in = models.DateTimeField(auto_now_add=True, blank=True)
     sign_out = models.DateTimeField(null=True, blank=True)

@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from kidcorral.families.models import Family, Person
+from kidcorral.families.models import Family
 
 
 class FamilyAdmin(admin.ModelAdmin):
@@ -10,9 +10,4 @@ class FamilyAdmin(admin.ModelAdmin):
         return [member.first_name for member in obj.members.all()]
 
 
-class PersonAdmin(admin.ModelAdmin):
-    list_display = ["email", "first_name", "last_name", "phone_number"]
-
-
 admin.site.register(Family, FamilyAdmin)
-admin.site.register(Person, PersonAdmin)
