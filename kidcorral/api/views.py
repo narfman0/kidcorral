@@ -7,7 +7,7 @@ from kidcorral.visit.models import Visit
 
 
 class FamilyViewSet(viewsets.ModelViewSet):
-    queryset = Family.objects.all()
+    queryset = Family.objects.none()
     serializer_class = serializers.FamilySerializer
 
     def get_queryset(self):
@@ -17,7 +17,7 @@ class FamilyViewSet(viewsets.ModelViewSet):
 
 
 class PersonViewSet(viewsets.ModelViewSet):
-    queryset = Person.objects.all()
+    queryset = Person.objects.none()
     serializer_class = serializers.PersonSerializer
 
     def get_queryset(self):
@@ -31,7 +31,7 @@ class PersonViewSet(viewsets.ModelViewSet):
 
 
 class VisitViewSet(viewsets.ModelViewSet):
-    queryset = Visit.objects.all()
+    queryset = Visit.objects.none()
     serializer_class = serializers.VisitSerializer
 
     def get_queryset(self):
