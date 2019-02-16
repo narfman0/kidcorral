@@ -20,6 +20,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "phonenumber_field",
+    "rest_framework",
     "kidcorral.families",
     "kidcorral.persons",
     "kidcorral.visit",
