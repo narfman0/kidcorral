@@ -1,4 +1,4 @@
-from rest_framework import viewsets
+from rest_framework import generics, mixins, viewsets
 
 from kidcorral.api import serializers
 from kidcorral.family.models import Family

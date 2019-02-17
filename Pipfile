@@ -8,6 +8,9 @@ django = "*"
 django-phonenumber-field = "*"
 phonenumbers = "*"
 djangorestframework = "*"
+coreapi = "*"
+pyyaml = "*"
+django-rest-swagger = "*"
 
 [dev-packages]
 
