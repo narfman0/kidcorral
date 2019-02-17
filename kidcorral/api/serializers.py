@@ -5,13 +5,13 @@ from kidcorral.person.models import Person
 from kidcorral.visit.models import Visit
 
 
-class FamilySerializer(serializers.HyperlinkedModelSerializer):
+class FamilySerializer(serializers.ModelSerializer):
     class Meta:
         model = Family
         fields = "__all__"
 
 
-class PersonSerializer(serializers.HyperlinkedModelSerializer):
+class PersonSerializer(serializers.ModelSerializer):
     class Meta:
         model = Person
         fields = (
@@ -24,7 +24,7 @@ class PersonSerializer(serializers.HyperlinkedModelSerializer):
         )
 
 
-class VisitSerializer(serializers.HyperlinkedModelSerializer):
+class VisitSerializer(serializers.ModelSerializer):
     class Meta:
         model = Visit
         fields = "__all__"
