@@ -4,8 +4,5 @@ from django.shortcuts import render
 
 @login_required
 def index(request):
-    guardians = request.user.family_legal_guardians.all()
-    children = request.user.children.all()
-    return render(
-        request, "index.html", context={"guardians": guardians, "children": children}
-    )
+    families = request.user.family_legal_guardians.all()
+    return render(request, "index.html", context={"families": families})

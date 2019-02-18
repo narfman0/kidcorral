@@ -9,8 +9,12 @@
 </p>
 <p class="subtitle">
   Update child information
-  {% for child in children %}
-    {{ child.first_name }}
+  {% for family in families %}
+    {% for child in family.children.all %}
+      {% with person=child %}
+        {% include "person-card.html" %}
+      {% endwith %}
+    {% endfor %}
   {% endfor %}
 </p>
 {% endblock %}
