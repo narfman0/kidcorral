@@ -1,0 +1,30 @@
+<div class="card">
+  <header class="card-header">
+    <p class="card-header-title">
+      {{ person.first_name }} {{ person.last_name }}
+    </p>
+  </header>
+  <div class="card-content">
+    <div class="content">
+      {% if person.email %}
+        <h3 class="subtitle">Email</h3>
+        <p>{{ person.email }}</p>
+      {% endif %}
+      {% if person.allergies %}
+        <h3 class="subtitle">Allergies</h3>
+        <p>{{ person.allergies }}</p>
+      {% endif %}
+      {% if person.notes %}
+        <h3 class="subtitle">Notes</h3>
+        <p>{{ person.notes }}</p>
+      {% endif %}
+      {% if person.phone_number %}
+        <h3 class="subtitle">Phone</h3>
+        <p>{{ person.phone_number }}</p>
+      {% endif %}
+    </div>
+  </div>
+  <footer class="card-footer">
+    <a href="#" class="card-footer-item">Edit</a>
+  </footer>
+</div>
