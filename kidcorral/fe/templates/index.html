@@ -5,7 +5,12 @@
   kidcorral
 </h1>
 <p class="subtitle">
-  Index for <strong>kidcorral</strong>!
+  Welcome back to <strong>kidcorral</strong>, {{ user }}!
 </p>
-<p>Regular text in p tag</p>
+<p class="subtitle">
+  Update child information
+  {% for child in children %}
+    {{ child.first_name }}
+  {% endfor %}
+</p>
 {% endblock %}
