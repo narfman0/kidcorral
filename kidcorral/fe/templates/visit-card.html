@@ -1,0 +1,28 @@
+<div class="card">
+  <header class="card-header">
+    <p class="card-header-title">
+      {{ visit.child.first_name }} {{ visit.child.last_name }}
+    </p>
+  </header>
+  <div class="card-content">
+    <div class="content">
+      {% if visit.email %}
+        <h3 class="subtitle">Location</h3>
+        <p>{{ visit.location }}</p>
+      {% endif %}
+      {% if visit.sign_in_time %}
+        <h3 class="subtitle">Sign in time</h3>
+        <p>{{ visit.sign_in_time }}</p>
+      {% endif %}
+      {% if visit.notes %}
+        <h3 class="subtitle">Notes</h3>
+        <p>{{ visit.notes }}</p>
+      {% endif %}
+    </div>
+  </div>
+  <footer class="card-footer">
+    {% if not visit.sign_out_guardian %}
+    <a href="{% url 'signout' visit.pk %}" class="card-footer-item">Sign Out</a>
+    {% endif %}
+  </footer>
+</div>

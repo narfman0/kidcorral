@@ -8,6 +8,12 @@
   Welcome back to <strong>kidcorral</strong>, {{ user }}!
 </p>
 <p class="subtitle">
+  Active visits
+  {% for visit in active_visits %}
+    {% include "visit-card.html" %}
+  {% endfor %}
+</p>
+<p class="subtitle">
   Update child information
   {% for family in families %}
     {% for child in family.children.all %}
