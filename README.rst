@@ -9,11 +9,11 @@ Will allow for parent login via web and printing tags.
 TODO
 ----
 
-* Create front end with REST api
+* Create front end (create visits)
 * Expose identification/information tags (print)
 * Send notifications
 
-* Sign in via phone
+* Register/sign in via phone
 * Update profile by person login credentials
 * Volunteer notifications
 * Analytics
