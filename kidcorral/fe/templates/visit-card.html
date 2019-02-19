@@ -7,18 +7,25 @@
   <div class="card-content">
     <div class="content">
       {% if visit.email %}
-        <h3 class="subtitle">Location</h3>
-        <p>{{ visit.location }}</p>
+      <p><strong>Email: </strong>{{ visit.email }}</p>
       {% endif %}
       {% if visit.sign_in_time %}
-        <h3 class="subtitle">Sign in time</h3>
-        <p>{{ visit.sign_in_time }}</p>
+      <p><strong>Sign-in time: </strong>{{ visit.sign_in_time}}</p>
       {% endif %}
       {% if visit.notes %}
-        <h3 class="subtitle">Notes</h3>
-        <p>{{ visit.notes }}</p>
+      <p><strong>Notes: </strong>{{ visit.notes }}</p>
       {% endif %}
     </div>
+    {% if not visit.sign_in_volunteer %}
+      <div class="notification is-warning is-bold">
+          <p class="title">
+            Warning: Missing volunteer for signin
+          </p>
+          <p class="subtitle">
+            Please coordinate with a volunteer to complete sign in of your child
+          </p>
+      </div>
+    {% endif %}
   </div>
   <footer class="card-footer">
     {% if not visit.sign_out_guardian %}
