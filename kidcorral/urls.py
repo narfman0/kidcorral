@@ -6,5 +6,6 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/", include("kidcorral.api.urls")),
     path("person/", include("kidcorral.person.urls")),
+    path("visit/", include("kidcorral.visit.urls")),
     path("", include("kidcorral.fe.urls")),
 ]
