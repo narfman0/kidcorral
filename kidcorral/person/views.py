@@ -7,6 +7,21 @@ from kidcorral.person.models import Person
 
 
 @login_required
+def create(request):
+    if request.method == "POST":
+        form = forms.PersonForm(request.POST)
+        if form.is_valid():
+            child = form.save()
+            # TODO unsure if persons first family is the family the child should be
+            # added to. we'll try this first..?
+            family = request.user.family_legal_guardians.all()[0]
+            family.children.add(child)
+            return redirect("/")
+    form = forms.PersonForm()
+    return render(request, "person_create.html", context={"form": form})
+
+
+@login_required
 def profile(request, person_id):
     person = get_object_or_404(Person, id=person_id)
     if person != request.user and not request.user.is_child(person):

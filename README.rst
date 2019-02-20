@@ -23,7 +23,6 @@ function to create a superuser::
 TODO
 ----
 
-* Create front end (create visits)
 * Expose identification/information tags (print)
 * Send notifications
 
