@@ -31,5 +31,6 @@
     {% if not visit.sign_out_guardian %}
     <a href="{% url 'signout' visit.pk %}" class="card-footer-item">Sign Out</a>
     {% endif %}
+    <a href="{% url 'create-tag' visit.pk %}" class="card-footer-item">Create Tag</a>
   </footer>
 </div>
