@@ -23,14 +23,11 @@ function to create a superuser::
 TODO
 ----
 
-* Expose identification/information tags (print)
 * Send notifications
-
-* Register/sign in via phone
-* Update profile by person login credentials
+* Register via phone
 * Volunteer notifications
 * Analytics
-* Hash every id card with date to ensure no tampering has occurred
+* Symmetric cipher (fernet?) every id card with date to ensure no tampering has occurred
 
 License
 -------
