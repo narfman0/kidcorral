@@ -1,5 +1,5 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import redirect, render
+from django.shortcuts import get_object_or_404, redirect, render
 from django.utils import timezone
 
 from kidcorral.fe import forms
@@ -22,7 +22,7 @@ def index(request):
 
 @login_required
 def signin(request, person_id):
-    child = Person.objects.get(pk=person_id)
+    child = get_object_or_404(Person, id=person_id)
     if request.method == "POST":
         form = forms.VisitForm(request.POST)
         if form.is_valid():
@@ -38,7 +38,7 @@ def signin(request, person_id):
 
 @login_required
 def signout(request, visit_id):
-    visit = Visit.objects.get(pk=visit_id)
+    visit = get_object_or_404(Visit, id=visit_id)
     visit.sign_out_guardian = request.user
     visit.sign_out_time = timezone.now()
     visit.save()

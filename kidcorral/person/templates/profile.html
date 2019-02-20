@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+  kidcorral profile
+</h1>
+<form action="{% url 'profile' person.pk %}" method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button class="button is-primary is-large" type="submit">Submit</button>
+</form>
+{% endblock %}

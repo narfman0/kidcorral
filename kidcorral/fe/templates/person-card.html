@@ -21,7 +21,7 @@
     </div>
   </div>
   <footer class="card-footer">
-    <a href="#" class="card-footer-item">Edit</a>
+    <a href="{% url 'profile' person.pk %}" class="card-footer-item">Edit</a>
     <a href="{% url 'signin' person.pk %}" class="card-footer-item">Sign In</a>
   </footer>
 </div>
