@@ -2,6 +2,7 @@ from django.db import models
 
 
 class Family(models.Model):
+    name = models.CharField(null=True, blank=True, max_length=100)
     preferred_contact = models.ForeignKey(
         "person.Person",
         on_delete=models.CASCADE,

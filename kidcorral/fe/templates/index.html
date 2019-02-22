@@ -27,6 +27,9 @@
 <p class="subtitle">
   Update child information
   {% for family in families %}
+    {% if family.name %}
+    <p>Family: {{ family.name }}</p>
+    {% endif %}
     {% for child in family.children.all %}
       {% with person=child %}
         {% include "person-card.html" %}
