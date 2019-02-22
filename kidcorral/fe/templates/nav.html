@@ -37,7 +37,7 @@
               </a>
             {% endif %}
           {% else %}
-          <a class="button is-primary sign-up-button" href="/accounts/TODO/register">
+          <a class="button is-primary sign-up-button" href="{% url 'person_register' %}">
             <strong>Sign up</strong>
           </a>
           <a class="button is-light login-button" href="{% url 'login' %}">

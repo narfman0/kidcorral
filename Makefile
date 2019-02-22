@@ -1,4 +1,4 @@
-default: init run
+default: run
 
 init:
 	pipenv install
@@ -15,5 +15,8 @@ migrate: makemigrations
 su:
 	pipenv run python manage.py createsuperuser
 
-run:
+run-app:
 	pipenv run python manage.py runserver
+
+r: run-app
+run: init r

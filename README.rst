@@ -23,8 +23,13 @@ function to create a superuser::
 TODO
 ----
 
+* Refactor family to guardians and caretakers
+* Volunteer portal
+* Usability/design
 * Send notifications
-* Register via phone
+* Security audit
+* Register via phone (create family on signup)
+* Tests
 * Volunteer notifications
 * Analytics
 * Symmetric cipher (fernet?) every id card with date to ensure no tampering has occurred

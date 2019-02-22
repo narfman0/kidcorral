@@ -11,6 +11,7 @@ djangorestframework = "*"
 coreapi = "*"
 pyyaml = "*"
 django-rest-swagger = "*"
+django-registration = "*"
 
 [dev-packages]
 

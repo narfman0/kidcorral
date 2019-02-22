@@ -2,12 +2,13 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
 
+from kidcorral.family.models import Family
 from kidcorral.person import forms
 from kidcorral.person.models import Person
 
 
 @login_required
-def create(request):
+def create_person(request):
     if request.method == "POST":
         form = forms.PersonForm(request.POST)
         if form.is_valid():
