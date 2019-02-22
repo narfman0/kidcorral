@@ -17,10 +17,14 @@
 {% endif %}
 {% if family %}
 <p class="subtitle">
-  Add family guardian <a class="button is-primary" href="{% url 'guardian-associate' family.pk %}">Add</a>
+  Add family guardian or caretaker <a class="button is-primary" href="{% url 'guardian-associate' family.pk %}">Add</a>
 </p>
 <p class="subtitle">
-  Add child information <a class="button is-primary" href="{% url 'person-create' family.pk %}">Add</a>
+  Add child <a class="button is-primary" href="{% url 'person-create' family.pk %}">Add</a>
+</p>
+{% else %}
+<p class="subtitle">
+  Create family <a class="button is-primary" href="{% url 'create-family' %}">Create</a>
 </p>
 {% endif %}
 {% if families %}
