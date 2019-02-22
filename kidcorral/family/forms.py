@@ -6,4 +6,4 @@ class FamilyCreateForm(forms.Form):
 
 
 class GuardianCreateForm(forms.Form):
-    email = forms.EmailField(label="Guardian email")
+    email = forms.EmailField()

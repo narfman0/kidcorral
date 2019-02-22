@@ -4,6 +4,6 @@ from kidcorral.person import views
 
 
 urlpatterns = [
-    path("<int:family_id>", views.create_person, name="person-create"),
+    path("<int:family_id>", views.create_person, name="create-person"),
     path("<int:person_id>", views.profile, name="profile"),
 ]

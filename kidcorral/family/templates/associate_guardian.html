@@ -2,8 +2,15 @@
 
 {% block content %}
 <h1 class="title">
-  kidcorral create guardian
+  kidcorral associate guardian/caretaker
 </h1>
+<h3 class="subtitle">
+  Note: guardian/caretaker must already be registered in system
+</h3>
+<p>
+  Guardians/caretakers are allowed to sign children in and out.
+  The may change notes and allergy information.
+</p>
 <form action="{% url 'guardian-associate' family.pk %}" method="post">
   {% csrf_token %}
   {{ form.as_p }}

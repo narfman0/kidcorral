@@ -20,7 +20,7 @@ def create_person(request, family_id):
             return redirect("/")
     form = forms.PersonForm()
     return render(
-        request, "person_create.html", context={"form": form, "family": family}
+        request, "create_person.html", context={"form": form, "family": family}
     )
 
 
