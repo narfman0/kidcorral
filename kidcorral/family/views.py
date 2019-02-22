@@ -6,14 +6,15 @@ from kidcorral.person.models import Person
 
 
 @login_required
-def create(request, family_id):
+def associate_guardian(request, family_id):
     if request.method == "POST":
         form = forms.GuardianCreateForm(request.POST)
         if form.is_valid():
-            email = form.cleaned_data()["email"]
+            email = form.cleaned_data["email"]
             guardian = Person.objects.get(email=email)
-            family = request.user.family_legal_guardians.all()[0]
-            family.guardians.add(guardian)
+            family = request.user.get_family()
+            family.legal_guardians.add(guardian)
             return redirect("/")
     form = forms.GuardianCreateForm()
-    return render(request, "guardian_create.html", context={"form": form})
+    context = dict(family=request.user.get_family(), form=form)
+    return render(request, "guardian_associate.html", context=context)

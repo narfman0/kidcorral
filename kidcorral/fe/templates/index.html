@@ -15,9 +15,11 @@
   {% endfor %}
 </p>
 {% endif %}
+{% if family %}
 <p class="subtitle">
-  Add family guardian <a class="button is-primary" href="{% url 'guardian-create' %}">Add</a>
+  Add family guardian <a class="button is-primary" href="{% url 'guardian-associate' family.pk %}">Add</a>
 </p>
+{% endif %}
 <p class="subtitle">
   Add child information <a class="button is-primary" href="{% url 'person-create' %}">Add</a>
 </p>

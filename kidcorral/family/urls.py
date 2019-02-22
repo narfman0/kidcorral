@@ -4,5 +4,7 @@ from kidcorral.family import views
 
 
 urlpatterns = [
-    path("<int:family_id>/guardian", views.create_guardian, name="guardian-create")
+    path(
+        "<int:family_id>/guardian", views.associate_guardian, name="guardian-associate"
+    )
 ]
