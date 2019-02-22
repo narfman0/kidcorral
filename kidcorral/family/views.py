@@ -1,4 +1,5 @@
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
 from django.shortcuts import redirect, render
 
 from kidcorral.family import forms
@@ -8,16 +9,18 @@ from kidcorral.person.models import Person
 
 @login_required
 def associate_guardian(request, family_id):
+    family = Family.objects.get(pk=family_id)
+    if family not in request.user.family_legal_guardians.all():
+        return HttpResponse("Unauthorized", status=401)
     if request.method == "POST":
         form = forms.GuardianCreateForm(request.POST)
         if form.is_valid():
             email = form.cleaned_data["email"]
             guardian = Person.objects.get(email=email)
-            family = request.user.get_family()
             family.legal_guardians.add(guardian)
             return redirect("/")
     form = forms.GuardianCreateForm()
-    context = dict(family=request.user.get_family(), form=form)
+    context = dict(family=family, form=form)
     return render(request, "associate_guardian.html", context=context)
 
 

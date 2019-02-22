@@ -9,13 +9,6 @@ class Person(AbstractUser):
     phone_number = PhoneNumberField(null=True, blank=True)
     phone_preferred = models.BooleanField(default=True)
 
-    def get_family(self):
-        # TODO refactor to guardians and parents
-        guardians = self.family_legal_guardians.all()
-        if guardians.count() > 0:
-            return guardians[0]
-        return None
-
     def is_child(self, person):
         """ Is self the guardian of person? """
         for family in self.family_legal_guardians.all():
