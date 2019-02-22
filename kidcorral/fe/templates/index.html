@@ -19,10 +19,10 @@
 <p class="subtitle">
   Add family guardian <a class="button is-primary" href="{% url 'guardian-associate' family.pk %}">Add</a>
 </p>
-{% endif %}
 <p class="subtitle">
-  Add child information <a class="button is-primary" href="{% url 'person-create' %}">Add</a>
+  Add child information <a class="button is-primary" href="{% url 'person-create' family.pk %}">Add</a>
 </p>
+{% endif %}
 {% if families %}
 <p class="subtitle">
   Update child information

@@ -8,18 +8,20 @@ from kidcorral.person.models import Person
 
 
 @login_required
-def create_person(request):
+def create_person(request, family_id):
+    family = Family.objects.get(pk=family_id)
+    if family not in request.user.family_legal_guardians.all():
+        return HttpResponse("Unauthorized", status=401)
     if request.method == "POST":
         form = forms.PersonForm(request.POST)
         if form.is_valid():
             child = form.save()
-            # TODO unsure if persons first family is the family the child should be
-            # added to. we'll try this first..?
-            family = request.user.family_legal_guardians.all()[0]
             family.children.add(child)
             return redirect("/")
     form = forms.PersonForm()
-    return render(request, "person_create.html", context={"form": form})
+    return render(
+        request, "person_create.html", context={"form": form, "family": family}
+    )
 
 
 @login_required

@@ -4,7 +4,7 @@
 <h1 class="title">
   kidcorral create person
 </h1>
-<form action="{% url 'person-create' %}" method="post">
+<form action="{% url 'person-create' family.pk %}" method="post">
   {% csrf_token %}
   {{ form.as_p }}
   <button class="button is-primary is-large" type="submit">Submit</button>
