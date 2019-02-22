@@ -25,15 +25,23 @@
   {% for family in families %}
     {% if family.name %}
     <h2 class="subtitle">Family: {{ family.name }}</h2>
+    <h3 class="subtitle">
+      Preferred contact: {{ family.preferred_contact.name }} - {{ family.preferred_contact.contact }}
+    </h3>
     {% endif %}
-    <p class="subtitle">
-      Add family guardian or caretaker <a class="button is-primary" href="{% url 'guardian-associate' family.pk %}">Add</a>
-    </p>
     <p class="subtitle">
       Add child <a class="button is-primary" href="{% url 'create-person' family.pk %}">Add</a>
     </p>
     {% for child in family.children.all %}
       {% with person=child %}
+        {% include "person-card.html" %}
+      {% endwith %}
+    {% endfor %}
+    <p class="subtitle">
+      Add family guardian or caretaker <a class="button is-primary" href="{% url 'guardian-associate' family.pk %}">Add</a>
+    </p>
+    {% for guardian in family.legal_guardians.all %}
+      {% with person=guardian skip_footer=True %}
         {% include "person-card.html" %}
       {% endwith %}
     {% endfor %}

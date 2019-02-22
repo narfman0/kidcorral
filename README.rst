@@ -23,12 +23,9 @@ function to create a superuser::
 TODO
 ----
 
-* Refactor family to guardians and caretakers
 * Volunteer portal
-* Usability/design
 * Send notifications
 * Security audit
-* Register via phone (create family on signup)
 * Tests
 * Volunteer notifications
 * Analytics

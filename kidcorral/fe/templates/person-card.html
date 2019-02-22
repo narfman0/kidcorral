@@ -1,7 +1,7 @@
 <div class="card">
   <header class="card-header">
     <p class="card-header-title">
-      {{ person.first_name }} {{ person.last_name }}
+      {{ person.name }}
     </p>
   </header>
   <div class="card-content">
@@ -20,8 +20,10 @@
       {% endif %}
     </div>
   </div>
+  {% if not skip_footer %}
   <footer class="card-footer">
     <a href="{% url 'profile' person.pk %}" class="card-footer-item">Edit</a>
     <a href="{% url 'signin' person.pk %}" class="card-footer-item">Sign In</a>
   </footer>
+  {% endif %}
 </div>

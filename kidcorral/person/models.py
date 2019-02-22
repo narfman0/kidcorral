@@ -15,3 +15,9 @@ class Person(AbstractUser):
             if person in family.children.all():
                 return True
         return False
+
+    def name(self):
+        return self.first_name + " " + self.last_name
+
+    def contact(self):
+        return self.phone_number if self.phone_preferred else self.email
