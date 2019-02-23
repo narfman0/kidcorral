@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django.utils import timezone
 
+from kidcorral.event.models import Room
 from kidcorral.person.models import Person
 from kidcorral.visit import forms
 from kidcorral.visit.models import Visit
@@ -23,6 +24,7 @@ def signin(request, person_id):
             model_instance.save()
             return redirect("/")
     form = forms.VisitForm()
+    form.fields["location"].queryset = Room.get_active()
     return render(request, "signin.html", context={"child": child, "form": form})
 
 

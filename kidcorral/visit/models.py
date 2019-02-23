@@ -5,7 +5,9 @@ class Visit(models.Model):
     child = models.ForeignKey(
         "person.Person", on_delete=models.CASCADE, related_name="visit_targets"
     )
-    location = models.CharField(max_length=200)
+    location = models.ForeignKey(
+        "event.Room", blank=True, null=True, on_delete=models.CASCADE
+    )
     notes = models.TextField(null=True, blank=True)
     sign_in_guardian = models.ForeignKey(
         "person.Person",

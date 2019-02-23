@@ -8,6 +8,7 @@ class Person(AbstractUser):
     notes = models.TextField(null=True, blank=True)
     phone_number = PhoneNumberField(null=True, blank=True)
     phone_preferred = models.BooleanField(default=True)
+    volunteer = models.BooleanField(default=False)
 
     def is_child(self, person):
         """ Is self the guardian of person? """

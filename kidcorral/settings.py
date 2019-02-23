@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     "phonenumber_field",
     "rest_framework",
     "rest_framework_swagger",
+    "kidcorral.event",
     "kidcorral.family",
     "kidcorral.fe",
     "kidcorral.person",
