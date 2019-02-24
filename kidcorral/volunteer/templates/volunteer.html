@@ -11,10 +11,19 @@
 {% endif %}
 {% for assignment in active_assignments %}
 <p class="subtitle">
-  {{ assignment.location }}
+  {{ assignment.location }} -
+  {{ assignment.sign_in_time }} -
   <a href="{% url 'fulfill-assignment' assignment.pk %}">Sign Out</a>
 </p>
-<p>{{ assignment.sign_in_time }}</p>
 <p>{{ assignment.notes }}</p>
+  {% for location, visits in location_visits.items %}
+    {% for visit in visits %}
+    <p>{{ visit.child.name }}</p>
+    <p>{{ visit.notes }}</p>
+    <p>{{ visit.child.notes }}</p>
+    <p>{{ visit.child.allergies }}</p>
+    <p>{{ visit.sign_in_time }}</p>
+    {% endfor %}
+  {% endfor %}
 {% endfor %}
 {% endblock %}

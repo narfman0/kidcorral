@@ -4,6 +4,7 @@ from django.shortcuts import redirect, render, reverse
 from django.utils import timezone
 
 from kidcorral.event.models import Room
+from kidcorral.visit.models import Visit
 from kidcorral.volunteer import forms
 from kidcorral.volunteer.models import Assignment
 
@@ -41,7 +42,17 @@ def volunteer(request):
     )
     if active_assignments.count() == 0:
         return redirect(reverse("create-assignment"))
-    # TODO get room:child map and populate in template
+
+    location_visits = {}
+    for assignment in active_assignments:
+        location = assignment.location
+        visits = Visit.objects.filter(location=location, sign_out_time=None)
+        location_visits[location] = visits
     return render(
-        request, "volunteer.html", context={"active_assignments": active_assignments}
+        request,
+        "volunteer.html",
+        context={
+            "active_assignments": active_assignments,
+            "location_visits": location_visits,
+        },
     )
