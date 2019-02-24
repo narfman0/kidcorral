@@ -9,5 +9,6 @@ urlpatterns = [
     path("family/", include("kidcorral.family.urls")),
     path("person/", include("kidcorral.person.urls")),
     path("visit/", include("kidcorral.visit.urls")),
+    path("volunteer/", include("kidcorral.volunteer.urls")),
     path("", include("kidcorral.fe.urls")),
 ]

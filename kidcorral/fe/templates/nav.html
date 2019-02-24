@@ -28,6 +28,11 @@
           <a class="button is-light logout-button" href="{% url 'profile' request.user.pk %}">
             Profile
           </a>
+          {% if user.volunteer %}
+          <a class="button is-light logout-button" href="{% url 'volunteer' %}">
+            Volunteer
+          </a>
+          {% endif %}
           <a class="button is-light logout-button" href="{% url 'logout' %}">
             Log out
           </a>

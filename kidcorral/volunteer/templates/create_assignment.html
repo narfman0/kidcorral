@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+  kidcorral create volunteer assignment
+</h1>
+<form action="{% url 'create-assignment' %}" method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button class="button is-primary is-large" type="submit">Create</button>
+</form>
+{% endblock %}

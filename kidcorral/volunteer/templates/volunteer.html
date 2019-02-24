@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+  kidcorral volunteer portal
+</h1>
+{% for assignment in active_assignments %}
+<p class="subtitle">{{ assignment.location }}</p>
+<p>{{ assignment.sign_in_time }}</p>
+<p>{{ assignment.notes }}</p>
+{% endfor %}
+{% endblock %}
