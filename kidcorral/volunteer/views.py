@@ -26,12 +26,12 @@ def create_assignment(request):
 
 @login_required
 def fulfill_assignment(request, assignment_pk):
-    assignment = Assignment.objects.get(assignment_pk)
+    assignment = Assignment.objects.get(pk=assignment_pk)
     if assignment.volunteer != request.user:
         return HttpResponse("Unauthorized", status=401)
     assignment.sign_out_time = timezone.now()
     assignment.save()
-    redirect(reverse("volunteer"))
+    return redirect(reverse("volunteer"))
 
 
 @login_required
@@ -40,7 +40,8 @@ def volunteer(request):
         volunteer=request.user, sign_out_time=None
     )
     if active_assignments.count() == 0:
-        redirect(reverse("create-assignment"))
+        return redirect(reverse("create-assignment"))
+    # TODO get room:child map and populate in template
     return render(
         request, "volunteer.html", context={"active_assignments": active_assignments}
     )

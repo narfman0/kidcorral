@@ -4,8 +4,16 @@
 <h1 class="title">
   kidcorral volunteer portal
 </h1>
+{% if not active_assignments %}
+<p class="subtitle">
+  <a href="{% url 'create-assignment' %}">Create Assignment</a>
+</p>
+{% endif %}
 {% for assignment in active_assignments %}
-<p class="subtitle">{{ assignment.location }}</p>
+<p class="subtitle">
+  {{ assignment.location }}
+  <a href="{% url 'fulfill-assignment' assignment.pk %}">Sign Out</a>
+</p>
 <p>{{ assignment.sign_in_time }}</p>
 <p>{{ assignment.notes }}</p>
 {% endfor %}
