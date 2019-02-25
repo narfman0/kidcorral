@@ -2,8 +2,13 @@
 
 {% block content %}
 <h1 class="title">
-  kidcorral sign-in
+  Child Sign-in
 </h1>
+<p class="subtitle">
+  Hello! You must be trying to sign in/drop off a child. Please select
+  where you will be dropping them off, and any notes (e.g. potty training,
+  or such-and-such person shall be picking them up)
+</p>
 <form action="{% url 'signin' child.pk %}" method="post">
   {% csrf_token %}
   {{ form.as_p }}

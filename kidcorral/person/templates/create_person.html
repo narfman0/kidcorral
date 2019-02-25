@@ -2,7 +2,7 @@
 
 {% block content %}
 <h1 class="title">
-  kidcorral create person
+  Add person/child
 </h1>
 <form action="{% url 'create-person' family.pk %}" method="post">
   {% csrf_token %}

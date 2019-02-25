@@ -2,8 +2,13 @@
 
 {% block content %}
 <h1 class="title">
-  kidcorral create volunteer assignment
+  Create Volunteer Assignment
 </h1>
+<p class="subtitle">
+Hello! You should be here because you want to sign up for a shift/assignment.
+When you know where you will be volunteering and receive the assignment, please
+use this form to select the location and click "create" to register with the system.
+</p>
 <form action="{% url 'create-assignment' %}" method="post">
   {% csrf_token %}
   {{ form.as_p }}

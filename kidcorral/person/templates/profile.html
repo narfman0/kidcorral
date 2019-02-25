@@ -2,7 +2,7 @@
 
 {% block content %}
 <h1 class="title">
-  kidcorral profile
+  {{ person.name }}'s profile
 </h1>
 <form action="{% url 'profile' person.pk %}" method="post">
   {% csrf_token %}

@@ -2,7 +2,7 @@
 
 {% block content %}
 <h1 class="title">
-  kidcorral volunteer portal
+  Volunteer Portal - Current Assignment(s)
 </h1>
 {% if not active_assignments %}
 <p class="subtitle">
@@ -17,6 +17,11 @@
 </p>
 <p>{{ assignment.notes }}</p>
   {% for location, visits in location_visits.items %}
+    {% if not visits %}
+    <p>
+      There do not appear to be any active visitors for your {{ location.name }} assignment!
+    </p>
+    {% endif %}
     {% for visit in visits %}
     <p>Name: {{ visit.child.name }}</p>
     <p>Visit Notes: {{ visit.notes }}</p>
