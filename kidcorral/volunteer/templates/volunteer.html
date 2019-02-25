@@ -23,6 +23,12 @@
     <p>{{ visit.child.notes }}</p>
     <p>{{ visit.child.allergies }}</p>
     <p>{{ visit.sign_in_time }}</p>
+    {% if not visit.sign_in_volunteer %}
+      <a href="{% url 'acknowledge-child-signin' visit.pk %}">Acknowledge</a>
+    {% else %}
+      <p>{{ visit.sign_in_volunteer }}</p>
+      <a href="{% url 'acknowledge-child-signout' visit.pk %}">Sign out</a>
+    {% endif %}
     {% endfor %}
   {% endfor %}
 {% endfor %}

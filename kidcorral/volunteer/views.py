@@ -10,6 +10,23 @@ from kidcorral.volunteer.models import Assignment
 
 
 @login_required
+def acknowledge_child_signin(request, visit_pk):
+    visit = Visit.objects.get(pk=visit_pk)
+    visit.sign_in_volunteer = request.user
+    visit.save()
+    return redirect(reverse("volunteer"))
+
+
+@login_required
+def acknowledge_child_signout(request, visit_pk):
+    visit = Visit.objects.get(pk=visit_pk)
+    visit.sign_out_volunteer = request.user
+    visit.sign_out_time = timezone.now()
+    visit.save()
+    return redirect(reverse("volunteer"))
+
+
+@login_required
 def create_assignment(request):
     if not request.user.volunteer:
         return HttpResponse("Unauthorized", status=401)

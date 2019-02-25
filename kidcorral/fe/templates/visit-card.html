@@ -26,6 +26,15 @@
           </p>
       </div>
     {% endif %}
+    {% if visit.sign_out_volunteer %}
+      <p class="subtitle">
+      {{ visit.child.name }} was signed out by {{ visit.sign_out_volunteer.name }}
+      {% if visit.sign_out_time %}
+        at {{ visit.sign_out_time }}
+      {% endif %}.
+      Thanks for the visit!
+      </p>
+    {% endif %}
   </div>
   <footer class="card-footer">
     {% if not visit.sign_out_guardian %}
