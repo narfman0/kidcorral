@@ -5,7 +5,6 @@ urlpatterns = [
     path("accounts/", include("django_registration.backends.one_step.urls")),
     path("accounts/", include("django.contrib.auth.urls")),
     path("admin/", admin.site.urls),
-    path("api/", include("kidcorral.api.urls")),
     path("family/", include("kidcorral.family.urls")),
     path("person/", include("kidcorral.person.urls")),
     path("visit/", include("kidcorral.visit.urls")),

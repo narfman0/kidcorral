@@ -7,11 +7,9 @@ name = "pypi"
 django = "*"
 django-phonenumber-field = "*"
 phonenumbers = "*"
-djangorestframework = "*"
-coreapi = "*"
-pyyaml = "*"
 django-rest-swagger = "*"
 django-registration = "*"
+zappa = "*"
 
 [dev-packages]
 
