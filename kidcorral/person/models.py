@@ -22,3 +22,6 @@ class Person(AbstractUser):
 
     def contact(self):
         return self.phone_number if self.phone_preferred else self.email
+
+    def __str__(self):
+        return self.name()

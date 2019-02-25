@@ -18,15 +18,15 @@
 <p>{{ assignment.notes }}</p>
   {% for location, visits in location_visits.items %}
     {% for visit in visits %}
-    <p>{{ visit.child.name }}</p>
-    <p>{{ visit.notes }}</p>
-    <p>{{ visit.child.notes }}</p>
-    <p>{{ visit.child.allergies }}</p>
-    <p>{{ visit.sign_in_time }}</p>
+    <p>Name: {{ visit.child.name }}</p>
+    <p>Visit Notes: {{ visit.notes }}</p>
+    <p>Child Notes: {{ visit.child.notes }}</p>
+    <p>Allergies: {{ visit.child.allergies }}</p>
+    <p>Sign-in time: {{ visit.sign_in_time }}</p>
     {% if not visit.sign_in_volunteer %}
       <a href="{% url 'acknowledge-child-signin' visit.pk %}">Acknowledge</a>
     {% else %}
-      <p>{{ visit.sign_in_volunteer }}</p>
+      <p>Sign-in volunteer: {{ visit.sign_in_volunteer.name }}</p>
       <a href="{% url 'acknowledge-child-signout' visit.pk %}">Sign out</a>
     {% endif %}
     {% endfor %}
