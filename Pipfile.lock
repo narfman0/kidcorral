@@ -1,11 +1,11 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "6db4eca39b786d753e73a3253f61eb3637124ae5c4abeef73af3a705e6bf489d"
+            "sha256": "eaf3ba11749873b194ab0637dadb260290e26c56bec3d7592dcb7dbb36538a85"
         },
         "pipfile-spec": 6,
         "requires": {
-            "python_version": "3"
+            "python_version": "3.6"
         },
         "sources": [
             {
@@ -264,6 +264,7 @@
                 "sha256:891c38b2a02f5bb1be3e4793866c8df49c7d19baabf9c1bad62547e0b4866aca",
                 "sha256:95511bae634d69bc7329ba55e646499a842bc4ec342ad54a8cdb65645a0aad3c"
             ],
+            "markers": "python_version >= '2.7'",
             "version": "==2.6.1"
         },
         "python-slugify": {
@@ -384,6 +385,7 @@
                 "sha256:61bf29cada3fc2fbefad4fdf059ea4bd1b4a86d2b6d15e1c7c0b582b9752fe39",
                 "sha256:de9529817c93f27c8ccbfead6985011db27bd0ddfcdb2d86f3f663385c6a9c22"
             ],
+            "markers": "python_version >= '3.4'",
             "version": "==1.24.1"
         },
         "werkzeug": {

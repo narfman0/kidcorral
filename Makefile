@@ -6,6 +6,9 @@ init:
 init-d:
 	pipenv install -d
 
+loaddata: migrate
+	pipenv run python manage.py loaddata kidcorral/person/fixtures/initial_data.json
+
 makemigrations:
 	pipenv run python manage.py makemigrations
 
@@ -18,5 +21,10 @@ su:
 run-app:
 	pipenv run python manage.py runserver
 
+run-test:
+	pipenv run python manage.py test
+
 r: run-app
 run: init r
+t: run-test
+test: init-d run-test

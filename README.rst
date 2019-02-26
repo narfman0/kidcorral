@@ -15,8 +15,9 @@ To run the app, first `migrate` to freshen the database then run app with::
     make migrate
     make run
 
-You should have a server running on http://localhost:5000. Hurrah! A convenience
-function to create a superuser::
+You should have a server running on http://localhost:5000. Hurrah! The default
+username is `admin` and password `admin.user`.
+A convenience function to create a superuser::
 
     make su
 
