@@ -69,6 +69,17 @@ DATABASES = {
         "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
     }
 }
+if os.environ.get("DB_TYPE", "sqlite") == "mysql":
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.mysql",
+            "NAME": os.environ.get("DB_NAME", "kidcorral"),
+            "USER": os.environ.get("DB_USER", "kidcorraluser"),
+            "PASSWORD": os.environ["DB_PASSWORD"],
+            "HOST": os.environ["DB_HOST"],
+            "PORT": os.environ.get("DB_PORT", "3306"),
+        }
+    }
 
 
 AUTH_PASSWORD_VALIDATORS = [
