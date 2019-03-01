@@ -86,8 +86,8 @@ __pycache__/
 local_settings.py
 
 .env
-db.sqlite3*
-zappa_settings.json
-app.yaml
+/db.sqlite3*
+/zappa_settings.json
+/app.yaml
 requirements.txt
-static/
+/static/

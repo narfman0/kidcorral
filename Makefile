@@ -4,6 +4,7 @@ collectstatic:
 	pipenv run python manage.py collectstatic
 
 deploy-gcp: collectstatic
+	pipenv lock -r > requirements.txt
 	gcloud app deploy app.yaml
 
 init:
