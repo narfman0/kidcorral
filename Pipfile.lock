@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "6b92f206aeac0fe9554ad9a47c71ac09516db5fcd1c5dc28b287399e038f1ee7"
+            "sha256": "47a2d9d74bc88b5cad37e7dd714fd6d82e497576feb365d733ec07c15bdd4daf"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -65,6 +65,13 @@
             ],
             "index": "pypi",
             "version": "==2.1.7"
+        },
+        "django-bulma": {
+            "hashes": [
+                "sha256:6e495c69dc0e08e0e2812da37999b01198bc2959cdc993f63a3ee6d2da227e23"
+            ],
+            "index": "pypi",
+            "version": "==0.5.3.0"
         },
         "django-phonenumber-field": {
             "hashes": [

@@ -24,7 +24,7 @@ A convenience function to create a superuser::
 TODO
 ----
 
-* Fix form styling, errors
+* Fix form errors
 * Send notifications
 * Security audit
 * Tests

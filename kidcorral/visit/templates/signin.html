@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load bulma_tags %}
+
 {% block content %}
 <h1 class="title">
   Child Sign-in
@@ -11,7 +13,7 @@
 </p>
 <form action="{% url 'signin' child.pk %}" method="post">
   {% csrf_token %}
-  {{ form.as_p }}
-  <button class="button is-primary is-large" type="submit">Submit</button>
+  {{ form|bulma }}
+  <button class="button is-primary" type="submit">Submit</button>
 </form>
 {% endblock %}

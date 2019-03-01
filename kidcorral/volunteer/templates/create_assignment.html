@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load bulma_tags %}
+
 {% block content %}
 <h1 class="title">
   Create Volunteer Assignment
@@ -11,7 +13,7 @@ use this form to select the location and click "create" to register with the sys
 </p>
 <form action="{% url 'create-assignment' %}" method="post">
   {% csrf_token %}
-  {{ form.as_p }}
-  <button class="button is-primary is-large" type="submit">Create</button>
+  {{ form|bulma }}
+  <button class="button is-primary" type="submit">Create</button>
 </form>
 {% endblock %}

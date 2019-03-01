@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     "kidcorral.person",
     "kidcorral.visit",
     "kidcorral.volunteer",
+    "bulma",
 ]
 
 MIDDLEWARE = [

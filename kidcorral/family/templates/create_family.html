@@ -1,12 +1,14 @@
 {% extends "base.html" %}
 
+{% load bulma_tags %}
+
 {% block content %}
 <h1 class="title">
   kidcorral create family
 </h1>
 <form action="{% url 'create-family' %}" method="post">
   {% csrf_token %}
-  {{ form.as_p }}
-  <button class="button is-primary is-large" type="submit">Submit</button>
+  {{ form|bulma }}
+  <button class="button is-primary" type="submit">Submit</button>
 </form>
 {% endblock %}
