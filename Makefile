@@ -1,11 +1,11 @@
 default: run
 
 collectstatic:
-	pipenv run python manage.py collectstatic
+	pipenv run python manage.py collectstatic --noinput
 
 deploy-gcp: collectstatic
 	pipenv lock -r > requirements.txt
-	gcloud app deploy app.yaml
+	gcloud app deploy -q app.yaml
 
 init:
 	pipenv install
