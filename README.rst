@@ -24,7 +24,7 @@ A convenience function to create a superuser::
 TODO
 ----
 
-* Volunteer portal
+* Fix form styling, errors
 * Send notifications
 * Security audit
 * Tests
