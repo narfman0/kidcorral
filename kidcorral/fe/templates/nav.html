@@ -18,37 +18,35 @@
       <a class="navbar-item" href="{% url 'index' %}">
         Home
       </a>
-
+      {% if user.is_authenticated %}
+      <a class="navbar-item" href="{% url 'profile' request.user.pk %}">
+        Profile
+      </a>
+      {% endif %}
+      {% if user.volunteer %}
+      <a class="navbar-item" href="{% url 'volunteer' %}">
+        Volunteer
+      </a>
+      {% endif %}
+      {% if user.is_staff %}
+      <a class="navbar-item" href="{% url 'admin:index' %}">
+        Admin
+      </a>
+      {% endif %}
     </div>
 
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
           {% if user.is_authenticated %}
-          <a class="button is-light logout-button" href="{% url 'index' %}">
-            Family
-          </a>
-          <a class="button is-light logout-button" href="{% url 'profile' request.user.pk %}">
-            Profile
-          </a>
-          {% if user.volunteer %}
-          <a class="button is-light logout-button" href="{% url 'volunteer' %}">
-            Volunteer
-          </a>
-          {% endif %}
-          <a class="button is-light logout-button" href="{% url 'logout' %}">
+          <a class="button is-light" href="{% url 'logout' %}">
             Log out
           </a>
-            {% if user.is_staff %}
-              <a class="button is-light" href="{% url 'admin:index' %}">
-                Admin
-              </a>
-            {% endif %}
           {% else %}
-          <a class="button is-primary sign-up-button" href="{% url 'person_register' %}">
-            <strong>Sign up</strong>
+          <a class="button is-primary" href="{% url 'person_register' %}">
+            Sign up
           </a>
-          <a class="button is-light login-button" href="{% url 'login' %}">
+          <a class="button is-light" href="{% url 'login' %}">
             Log in
           </a>
           {% endif %}
@@ -58,4 +56,19 @@
   </div>
 </nav>
 
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+  if ($navbarBurgers.length > 0) {
+    $navbarBurgers.forEach( el => {
+      el.addEventListener('click', () => {
+        const target = el.dataset.target;
+        const $target = document.getElementById(target);
+        el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
 
+      });
+    });
+  }
+});
+</script>
