@@ -4,7 +4,7 @@
 
 {% block content %}
 <h1 class="title">
-  {{ person.name }}'s profile
+  {{ person.name|default:"Person" }}'s profile
 </h1>
 <form action="{% url 'profile' person.pk %}" method="post">
   {% csrf_token %}

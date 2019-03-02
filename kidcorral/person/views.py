@@ -15,7 +15,12 @@ def create_person(request, family_id):
     if request.method == "POST":
         form = forms.PersonForm(request.POST)
         if form.is_valid():
-            child = form.save()
+            child = form.save(commit=False)
+            if not child.username:
+                child.username = Person.generate_username(
+                    child.first_name, child.last_name
+                )
+            child.save()
             family.children.add(child)
             return redirect("/")
     form = forms.PersonForm()

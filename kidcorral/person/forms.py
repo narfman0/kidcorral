@@ -7,10 +7,9 @@ class PersonForm(ModelForm):
     class Meta:
         model = Person
         fields = [
-            "email",
-            "username",
             "first_name",
             "last_name",
+            "email",
             "phone_number",
             "phone_preferred",
             "allergies",

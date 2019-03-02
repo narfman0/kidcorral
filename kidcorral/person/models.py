@@ -1,3 +1,6 @@
+import string
+import random
+
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
@@ -17,10 +20,26 @@ class Person(AbstractUser):
         return False
 
     def name(self):
-        return self.first_name + " " + self.last_name
+        if self.first_name and self.last_name:
+            return self.first_name + " " + self.last_name
+        if self.first_name:
+            return self.first_name
+        if self.last_name:
+            return self.last_name
+        return self.username
 
     def contact(self):
         return self.phone_number if self.phone_preferred else self.email
 
     def __str__(self):
         return self.name()
+
+    @classmethod
+    def generate_username(cls, first_name, last_name):
+        suffix = "".join(
+            random.choice(
+                string.ascii_uppercase + string.ascii_lowercase + string.digits
+            )
+            for _ in range(5)
+        )
+        return f"{first_name}.{last_name}.{suffix}"
