@@ -1,5 +1,7 @@
 from django.db import models
 
+from kidcorral.family.models import Family
+
 
 class Visit(models.Model):
     child = models.ForeignKey(
@@ -39,3 +41,9 @@ class Visit(models.Model):
         blank=True,
         null=True,
     )
+
+    def family(self):
+        return Family.objects.get(children__pk=self.child.pk)
+
+    def preferred_contact(self):
+        return self.family().preferred_contact

@@ -24,6 +24,11 @@
     {% endif %}
     {% for visit in visits %}
     <p>Name: {{ visit.child.name }}</p>
+    <p>Birthdate: {{ visit.child.birthdate }}</p>
+    {% with family=visit.family %}
+    <p>Contact Name: {{ family.preferred_contact.name }}</p>
+    <p>Contact Info: {{ family.preferred_contact.contact }}</p>
+    {% endwith %}
     <p>Visit Notes: {{ visit.notes }}</p>
     <p>Child Notes: {{ visit.child.notes }}</p>
     <p>Allergies: {{ visit.child.allergies }}</p>

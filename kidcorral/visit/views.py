@@ -44,5 +44,5 @@ def tagcreate(request, visit_id):
     visit = get_object_or_404(Visit, id=visit_id)
     if not request.user.is_child(visit.child):
         return HttpResponse("Unauthorized", status=401)
-    context = {"visit": visit, "person": visit.child}
+    context = {"visit": visit, "person": visit.child, "family": visit.family()}
     return render(request, "tag.html", context=context)

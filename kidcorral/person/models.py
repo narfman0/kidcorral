@@ -11,6 +11,7 @@ class Person(AbstractUser):
     phone_number = models.CharField(null=True, blank=True, max_length=64)
     phone_preferred = models.BooleanField(default=True)
     volunteer = models.BooleanField(default=False)
+    birthdate = models.DateField(null=True, blank=True)
 
     def is_child(self, person):
         """ Is self the guardian of person? """
