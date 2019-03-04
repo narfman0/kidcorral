@@ -4,8 +4,12 @@
 
 {% block content %}
 <h1 class="title">
-  kidcorral create family
+  kidcorral create new family
 </h1>
+<p class="notification is-warning">
+  Note: Do not create multiple families/children across multiple guardians
+  (e.g. father/mother)
+</p>
 <form action="{% url 'create-family' %}" method="post">
   {% csrf_token %}
   {{ form|bulma }}

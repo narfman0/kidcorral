@@ -25,11 +25,9 @@
   {% endfor %}
 </p>
 {% endif %}
-{% if not families %}
 <p class="subtitle">
   Create family <a class="button is-primary" href="{% url 'create-family' %}">Create</a>
 </p>
-{% endif %}
 {% if families %}
 <p class="subtitle">
   {% for family in families %}

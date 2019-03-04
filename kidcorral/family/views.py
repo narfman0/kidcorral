@@ -29,7 +29,7 @@ def create_family(request):
     if request.method == "POST":
         form = forms.FamilyCreateForm(request.POST)
         if form.is_valid():
-            name = form.cleaned_data["name"]
+            name = form.cleaned_data["family_name"]
             family = Family.objects.create(name=name, preferred_contact=request.user)
             family.legal_guardians.add(request.user)
             return redirect("/")
