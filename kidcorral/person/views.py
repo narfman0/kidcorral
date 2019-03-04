@@ -13,7 +13,7 @@ def create_person(request, family_id):
     if family not in request.user.family_legal_guardians.all():
         return HttpResponse("Unauthorized", status=401)
     if request.method == "POST":
-        form = forms.PersonForm(request.POST)
+        form = forms.CreateChildForm(request.POST)
         if form.is_valid():
             child = form.save(commit=False)
             if not child.username:
@@ -23,7 +23,7 @@ def create_person(request, family_id):
             child.save()
             family.children.add(child)
             return redirect("/")
-    form = forms.PersonForm()
+    form = forms.CreateChildForm()
     return render(
         request, "create_person.html", context={"form": form, "family": family}
     )

@@ -6,11 +6,6 @@
 <h1 class="title">
   Add person/child
 </h1>
-<p>Note: we have parent/guardian information saved, so do not
-worry about putting in personal information again for things like email or phone
-number. This is intended to be the care recipient's contact information.
-For example, a middle schooler with an email address or phone number if they
-are also a volunteer.<p>
 <form action="{% url 'create-person' family.pk %}" method="post">
   {% csrf_token %}
   {{ form|bulma }}
