@@ -30,9 +30,13 @@ To use docker, check the `contrib/Dockerfile`. You may build with::
 
 Run with::
 
-    docker run -p 8000:8000 -it kidcorral
+    docker run -p 8000:8000 -v kidcorral-vol:/usr/src/app --name kidcorral -it kidcorral
 
 You should now be able to connect to localhost:8000
+
+Create a superuser with::
+
+    docker exec -it kidcorral make su
 
 TODO
 ----
