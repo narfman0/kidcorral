@@ -21,6 +21,19 @@ A convenience function to create a superuser::
 
     make su
 
+Docker
+------
+
+To use docker, check the `contrib/Dockerfile`. You may build with::
+
+    docker build -t kidcorral -f contrib/Dockerfile .
+
+Run with::
+
+    docker run -p 8000:8000 -it kidcorral
+
+You should now be able to connect to localhost:8000
+
 TODO
 ----
 
